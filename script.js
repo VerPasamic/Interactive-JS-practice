@@ -1,181 +1,134 @@
-// JavaScript Practice - Starter Code
-// Fill in the missing code where you see comments!
+// script.js – Answer Key
 
 // ===========================================
-// VARIABLES PRACTICE
+// 1. VARIABLES PRACTICE
 // ===========================================
-// 1. TODO: Declare variables for your name and age 
-// let myName = 
-// const myAge = 
+// Declare variables for your name and age
+let myName = "Your Name";
+const myAge = 25;
 
-// 2. TODO: Log your variables to the console
-// console.log();
-
-// 3. TODO: Declare variables for math practice
-// let num1 = 
-// let num2 = 
-
-// 4. TODO: Declare a counter variable
-// let counter = 
+// Log your variables to the console
+console.log("Name:", myName);
+console.log("Age:", myAge);
 
 // ===========================================
-// DOM ELEMENT SELECTION
+// 2. SELECT & LOG ALL <h1> ELEMENTS
 // ===========================================
-// Example selectors (completed)
-const pageTitle = document.getElementById('page-title');
-const demoText = document.getElementById('demo-text');
-const title = document.querySelector('h1');
-title.textContent = "New page title"; 
-console.log(title.textContent);
-
-// TODO: Select these elements by their IDs
-// const secondText = 
-// const num1 = document.getElementById('  '); 
-// const num2 = document.getElementById('  ');
-// const sumResult = document.getElementById('  ');
-
-
-// TODO: Form practice elements, insert name of matching ID
-// const nameInput = document.getElementById('  ');
-// const submitBtn = document.getElementById('  ');
-// const result = document.getElementById('  ');
-
-// TODO: Select list and counter elements
-const itemList = document.getElementById('item-list');
-// const itemCount = 
-// const counterDisplay = 
-
-// TODO: Select color box and score elements
-// const colorBox = 
-// const playerScore = 
-// const highScore = 
+let title = document.querySelector("h1");
+console.log(title);
 
 // ===========================================
-// BASIC DOM MANIPULATION FUNCTIONS
+// 3. UPDATE <h1> TEXT & LOG AGAIN
 // ===========================================
+title.textContent = "New page title";
+console.log(title);
 
-// TODO: Complete this function to change demo text
+// ===========================================
+// 4. BASIC DOM MANIPULATION FUNCTIONS
+// ===========================================
+const demoText = document.getElementById("demo-text");
+
 function changeText() {
-    // Change demoText to say "Text has been changed!"
-    demoText.textContent = "Text has been changed!"; 
+  demoText.textContent = "Text has been changed!";
 }
 
-// TODO: Complete this function to add highlight class
 function addHighlight() {
-    // Add the 'highlight' class to demoText
-    demoText.classList.add("highlight");
-    
+  demoText.classList.add("highlight");
 }
 
-// TODO: Complete this function to remove highlight class
 function removeHighlight() {
-    // Remove the 'highlight' class from demoText
-    demoText.classList.remove("highlight"); 
+  demoText.classList.remove("highlight");
 }
 
 // ===========================================
-// LIST MANAGEMENT FUNCTIONS
+// 5. SIMPLE LIST ADD/REMOVE
 // ===========================================
+const itemList = document.getElementById("item-list");
 
-// TODO: Complete this function to add a new list item
 function addItem() {
-    // Create a new list item element
-    // Set its text content to "New Item"
-    // Add it to the itemList
-    // Update the item count
-  const listItem = document.createElement('li');
-  listItem.textContent = "Learn JavaScript";
-  itemList.appendChild(listItem);
-    
+  let li = document.createElement("li");
+  li.textContent = "New Item";
+  itemList.appendChild(li);
 }
 
-// TODO: Complete this function to remove the last list item
-function removeLastItem() {
-    // Get all list items
-    // Remove the last one if it exists
-    // Update the item count
-    
-}
-
-// TODO: Complete this function to count items
-function countItems() {
-    // Count how many list items exist
-    // Update the itemCount element
-    
+function removeItem() {
+  itemList.lastElementChild.remove();
 }
 
 // ===========================================
-// VARIABLES AND MATH FUNCTIONS
+// 6. FORM PRACTICE
+// ===========================================
+const nameInput = document.getElementById("name-input");
+const submitBtn = document.getElementById("submit-btn");
+const result = document.getElementById("result");
+
+submitBtn.addEventListener("click", () => {
+  const text = nameInput.value;
+  result.textContent = text;
+});
+
+// ===========================================
+// 7. EVENT LISTENER ON <h1>
 // ===========================================
 
-// TODO: Complete this function to update number variables
+const Pagetitle = document.querySelector("h1");
+title.addEventListener("click", function () {
+  title.textContent = "You clicked me!";
+});
+
+// ===========================================
+// 8. SIMPLE MATH DEMO
+// ===========================================
+const num1Display    = document.getElementById("num1-display");
+const num2Display    = document.getElementById("num2-display");
+const sumResult      = document.getElementById("sum-result");
+
+let num1 = 0;
+let num2 = 0;
+
 function updateNumbers() {
-    // Set num1 to a random number (use Math.random() * 10)
-    // Set num2 to a different random number
-    // Update the display elements to show the new numbers
-    
+  num1 = Math.floor(Math.random() * 10) + 1;
+  num1Display.textContent = num1;
+  num2 = Math.floor(Math.random() * 10) + 1;
+  num2Display.textContent = num2;
 }
-
-// TODO: Complete this function to do math calculations
 function doMath() {
-    // Calculate sum, difference, and product of num1 and num2
-    // Display results in the appropriate elements
-    
+   sumResult.textContent = num1 + num2;
 }
 
+// ===========================================
+// EXTENSION CHALLENGES
+// ===========================================
 
 // ===========================================
 // COUNTER FUNCTIONS
 // ===========================================
 
+const counterDisplay = document.getElementById("counter-display");
+let counter = 0;
+
 // TODO: Complete this function to increase counter
 function increaseCounter() {
-    // Add 1 to the counter variable
-    // Update the counterDisplay element
-    
+  // Add 1 to the counter variable
+  counter++;
+  // Update the counterDisplay element
+  counterDisplay.textContent = counter;
 }
 
 // TODO: Complete this function to decrease counter
 function decreaseCounter() {
-    // Subtract 1 from the counter variable
-    // Update the counterDisplay element
-    
+  // Subtract 1 from the counter variable
+  // Update the counterDisplay element
+  counter--;
+  counterDisplay.textContent = counter;
 }
 
 // TODO: Complete this function to reset counter
 function resetCounter() {
-    // Set counter back to 0
-    // Update the counterDisplay element
-    
-}
-
-// ===========================================
-// COLOR CHANGER FUNCTIONS
-// ===========================================
-
-// TODO: Complete this function to change to red
-function changeToRed() {
-    // Add the 'red-bg' class to colorBox
-    
-}
-
-// TODO: Complete this function to change to blue
-function changeToBlue() {
-    // Remove any color classes and add 'blue-bg' class
-    
-}
-
-// TODO: Complete this function to change to green
-function changeToGreen() {
-    // Remove any color classes and add 'green-bg' class
-    
-}
-
-// TODO: Complete this function for random color
-function randomColor() {
-    // Use Math.random() to pick a random color class
-    // Remove old classes and add the random one
-    
+  // Set counter back to 0
+  // Update the counterDisplay element
+  counter = 0;
+  counterDisplay.textContent = counter;
 }
 
 // ===========================================
@@ -183,56 +136,34 @@ function randomColor() {
 // ===========================================
 
 // TODO: Declare score variables
-// let currentScore = 
-// let bestScore = 
+
+const playerScoreEl = document.getElementById("player-score");
+const highScoreEl = document.getElementById("high-score");
+let currentScore = 0;
+let bestScore = 0;
 
 // TODO: Complete this function to add points
 function addPoints() {
-    // Add 10 to currentScore
-    // Update the playerScore display
-    
+  // Add 10 to currentScore
+  currentScore += 10;
+  // Update the playerScore display
+  playerScoreEl.textContent = currentScore;
 }
 
 // TODO: Complete this function to subtract points
 function subtractPoints() {
-    // Subtract 5 from currentScore (don't go below 0)
-    // Update the playerScore display
-    
+  // Subtract 5 from currentScore 
+  currentScore =  currentScore - 5;
+  // Update the playerScore display
+  playerScoreEl.textContent = currentScore;
 }
 
 // TODO: Complete this function to check high score
 function checkHighScore() {
-    // If currentScore is higher than bestScore, update bestScore
+  // If currentScore is higher than bestScore, update bestScore
+  if (currentScore > bestScore) {
+    bestScore = currentScore;
     // Update the highScore display
-    
+    highScoreEl.textContent = bestScore;
+  }
 }
-
-// ===========================================
-// EXTENSION CHALLENGES
-// ===========================================
-
-// DOM Practice Extensions:
-// 1. Add functions to change font size of text elements
-// 2. Create a function that changes multiple elements at once
-// 3. Add a function that cycles through different text messages
-
-// Variable and Math Extensions:
-// 1. Add division to the math calculations
-// 2. Create a function that calculates area of a rectangle
-// 3. Add variables to track how many times buttons are clicked
-
-// List Extensions:
-// 1. Add a function to clear all list items
-// 2. Create numbered list items (Item 1, Item 2, etc.)
-// 3. Add a function to change the text of existing items
-
-// Counter Extensions:
-// 1. Add buttons to increase/decrease by 5 or 10
-// 2. Add a maximum and minimum limit to the counter
-// 3. Change the color of the counter based on its value
-
-// Score Tracker Extensions:
-// 1. Add different point values for different actions
-// 2. Create a "lives" system that decreases
-// 3. Add a function to save/load high scores
-
