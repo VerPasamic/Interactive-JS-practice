@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Practice</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1 id="page-title">Interactive JavaScript Practice</h1>
+      <p id="description">
+        This page will be updated using JavaScript variables and DOM
+        manipulation.
+      </p>
+    </header>
+
+    <main>
+      <!-- Basic DOM Practice Section -->
+      <section class="practice-section">
+        <h2>DOM Practice</h2>
+        <p id="demo-text">Select ME!</p>
+        <p id="second-text">Change me too!</p>
+        <button onclick="changeText()">Change Text</button>
+        <button onclick="addHighlight()">Add Highlight</button>
+        <button onclick="removeHighlight()">Remove Highlight</button>
+      </section>
+
+      <!-- List Practice Section -->
+      <section class="practice-section">
+        <h2>List Manager</h2>
+        <ul id="item-list">
+          <li id="item1">Sample Item 1</li>
+          <li id="item2">Sample Item 2</li>
+          <li id="item3">Sample Item 3</li>
+        </ul>
+
+        <button onclick="addItem()">Add New Item</button>
+        <button onclick="removeLastItem()">Remove Last Item</button>
+        <button onclick="countItems()">Count Items</button>
+        <p id="item-count">Items: 3</p>
+      </section>
+      <section class="practice-section">
+        <h2>Form Practice</h2>
+        <input type="text" id="name-input" placeholder="Type something..." />
+        <button id="submit-btn">Submit</button>
+        <p id="result"></p>
+      </section>
+
+      <!-- Variables and Math Section -->
+      <section class="practice-section">
+        <h2>Variables and Math</h2>
+        <p>Number 1: <span id="num1-display">0</span></p>
+        <p>Number 2: <span id="num2-display">0</span></p>
+        <p>Sum: <span id="sum-result">0</span></p>
+        <p>Difference: <span id="diff-result">0</span></p>
+        <p>Product: <span id="product-result">0</span></p>
+
+        <button onclick="updateNumbers()">Update Numbers</button>
+        <button onclick="doMath()">Calculate</button>
+      </section>
+
+      <!-- Simple Counter Section -->
+      <section class="practice-section">
+        <h2>Simple Counter</h2>
+        <p>Count: <span id="counter-display">0</span></p>
+        <button onclick="increaseCounter()">+1</button>
+        <button onclick="decreaseCounter()">-1</button>
+        <button onclick="resetCounter()">Reset</button>
+      </section>
+
+      <!-- Color Changer Section -->
+      <section class="practice-section">
+        <h2>Color Changer</h2>
+        <div id="color-box">This box will change colors!</div>
+        <button onclick="changeToRed()">Red</button>
+        <button onclick="changeToBlue()">Blue</button>
+        <button onclick="changeToGreen()">Green</button>
+        <button onclick="randomColor()">Random</button>
+      </section>
+
+      <!-- Challenge Section -->
+      <section class="practice-section">
+        <h2>Challenge: Score Tracker</h2>
+        <p>Player Score: <span id="player-score">0</span></p>
+        <p>High Score: <span id="high-score">0</span></p>
+        <button onclick="addPoints()">+10 Points</button>
+        <button onclick="subtractPoints()">-5 Points</button>
+        <button onclick="checkHighScore()">Check High Score</button>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
